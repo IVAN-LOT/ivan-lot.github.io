@@ -9,9 +9,15 @@ const inputEmail = document.createElement("input");
 const labelMessage = document.createElement("label");
 const inputMessage = document.createElement("textarea");
 const btnEnvoyer = document.createElement("button");
-
+const prompt = document.createElement("input");
 
 function creerChamps() {
+    prompt.type = "text";
+    prompt.name = "_gotcha";
+    prompt.style.display = "none";
+    prompt.tabIndex = -1;
+    prompt.autocomplete = "off";
+
     //champs des noms
     labelNom.textContent = "Nom : ";
     inputNom.type = "text";
@@ -35,7 +41,7 @@ function creerChamps() {
 
     // On retourne tout dans un tableau
     return [
-        labelNom, inputNom, document.createElement("br"),
+        prompt,labelNom, inputNom, document.createElement("br"),
         labelEmail, inputEmail, document.createElement("br"),
         labelMessage, inputMessage, document.createElement("br"),
     ];
