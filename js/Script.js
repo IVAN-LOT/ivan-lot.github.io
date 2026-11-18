@@ -11,6 +11,7 @@ const inputMessage = document.createElement("textarea");
 const btnEnvoyer = document.createElement("button");
 const prompt = document.createElement("input");
 
+
 function creerChamps() {
     prompt.type = "text";
     prompt.name = "_gotcha";
@@ -58,13 +59,13 @@ function creerFormulaire() {
     // connection des éléments dans le formulaire
     form.append(...creerChamps(),btnEnvoyer);
 
-    validationForm();
     // Ajout du formulaire dans le html
-    document.getElementById("formulaire").appendChild(form)
+    document.getElementById("formulaire").appendChild(form);
+    validationFormServeur();
 }
 
 
-function validationForm() {
+function validationFormServeur() {
     form.addEventListener("submit", async (e) => {
         e.preventDefault();
 
